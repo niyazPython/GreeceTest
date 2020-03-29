@@ -1,17 +1,14 @@
 node("07"){
   stage("Check out"){
-    git credentialsId: "067d9eb9a3299533dbf9cf220bde1c04cbd71344", url: "git@github.aig.net:NIAHMED/Greece_PythonRepo.git", branch: "Python_TestCode"
+    git 'https://github.com/niyazPython/GreeceTest.git'
   }
   
   stage("Run tests"){
     bat """
-        cd C:/Users/nahmed/AppData/Local/Programs/Python/Python38
+        cd Scripts
         REM python.exe -m pip install opencv-python
-        REM python.exe -m pip install xlrd
         REM python.exe -m pip install pywin32
         REM python -m pip install selenium
-        REM python -m pip install skimage
-        REM python -m pip install imutils
         REM python -m pip install cv2
         REM python -m pip install os
         REM python -m pip install time
@@ -20,11 +17,9 @@ node("07"){
         REM python -m pip install pandas
         REM python -m pip install pynput
         REM python -m pip install win32com
-        REM python -m pip install compare_ssim
         REM python -m pip install --upgrade pip
         REM python.exe -m pip install opencv-python==3.3.0.9
-        REM python //C:/Users/nahmed/Documents/GitHub/Greece_PythonRepo/Scripts/duplicate_validation_folder.py
-        python duplicate_validation_folder.py
+         python duplicate_validation_folder.py
         
 
        """
